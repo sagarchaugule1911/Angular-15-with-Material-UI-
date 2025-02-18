@@ -1,0 +1,51 @@
+<mat-card>
+<mat-card-header>
+    <mat-form-field>
+        <input matInput (keyup)="Filterchange($event)" placeholder="Search Here">
+    </mat-form-field>
+    <button (click)="addcustomer()" mat-raised-button style="margin-left: 60%;" color="primary">Add User +</button>
+</mat-card-header>
+<mat-card-content>
+
+<table matSort mat-table [dataSource]="datasource" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="code">
+        <th mat-sort-header mat-header-cell *matHeaderCellDef>CODE</th>
+        <td mat-cell *matCellDef="let element" >{{element.id}}</td>
+    </ng-container>
+    <ng-container matColumnDef="name">
+        <th mat-sort-header mat-header-cell *matHeaderCellDef>Name</th>
+        <td mat-cell *matCellDef="let element" >{{element.name}}</td>
+    </ng-container>
+    <ng-container matColumnDef="email">
+        <th mat-sort-header mat-header-cell *matHeaderCellDef>E-Mail</th>
+        <td mat-cell *matCellDef="let element" >{{element.email}}</td>
+    </ng-container>
+    <ng-container matColumnDef="phone">
+        <th mat-sort-header mat-header-cell *matHeaderCellDef>Phone</th>
+        <td mat-cell *matCellDef="let element" >{{element.phone}}</td>
+    </ng-container>
+    <ng-container matColumnDef="status">
+        <th mat-sort-header mat-header-cell *matHeaderCellDef>Status</th>
+        <td mat-cell *matCellDef="let element" >{{element.status}}</td>
+    </ng-container>
+    <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef>Action</th>
+        <td mat-cell *matCellDef="let element">
+
+        <button (click)="editcustomer(element.id)" mat-raised-button color="primary" >Edit</button>
+        <button (click)="deletecustomer(element.id)" mat-raised-button color="warn" >Delete</button>
+        <button (click)="viewcustomer(element.id)" mat-raised-button color="primary" >View User</button>
+        </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedcoloumn"></tr>
+    <tr mat-row *matRowDef="let row; columns:displayedcoloumn"></tr>
+
+</table>
+</mat-card-content>
+<mat-card-footer>
+
+    <mat-paginator [pageSizeOptions]="[5,10,15]" showFirstLastButtons></mat-paginator>
+</mat-card-footer>
+</mat-card>

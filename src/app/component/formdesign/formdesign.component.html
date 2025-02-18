@@ -1,0 +1,65 @@
+<form [formGroup]="customerform" (ngSubmit)="savecustomer()">
+<mat-card>
+    <mat-card-content >
+        <mat-form-field class="mat-50">
+            <mat-label>Name</mat-label>
+            <input formControlName="name" matInput>
+        </mat-form-field>
+        
+        <mat-form-field class="mat-50">
+            <mat-label>Email</mat-label>
+            <input formControlName="email" matInput>
+        </mat-form-field>
+        <mat-form-field class="mat-50">
+            <mat-label>Phone</mat-label>
+            <input formControlName="phone" matInput>
+        </mat-form-field>
+           
+        <mat-form-field class="mat-50">
+            <mat-label>Country</mat-label>
+            <mat-select formControlName="country" >
+                <mat-option [value]="item" *ngFor="let item of countryList">{{item}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        
+        <mat-form-field class="address" >
+            <mat-label>Address</mat-label>
+            <textarea matInput formControlName="address"></textarea>
+        </mat-form-field>
+        
+        <mat-form-field class="mat-50">
+            <mat-label>Term</mat-label>
+            <input [matAutocomplete]="auto" matInput formControlName="term">
+            <mat-autocomplete autoActiveFirstoption #auto="matAutocomplete">
+            <mat-option [value]="item" *ngFor="let item of termList">{{item}}</mat-option>
+
+            </mat-autocomplete>
+        </mat-form-field>
+        
+        <mat-form-field class="mat-50">
+            <mat-label>Date of Birth</mat-label>
+            <input matInput [matDatepicker]="picker"  formControlName="dob">
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker ></mat-datepicker>
+            <mat-hint>dd/mm/yyyy</mat-hint>
+        </mat-form-field>
+
+        <div>
+            <mat-radio-group formControlName="gender">
+                <mat-radio-button value="male">Male</mat-radio-button>
+                <mat-radio-button value="female">Female</mat-radio-button>
+            </mat-radio-group>
+            <mat-checkbox formControlName="status">Is Active</mat-checkbox>
+        </div>
+        <div style="margin:2px; text-align: center;">
+            <button mat-raised-button color="primary" type="submit">Save</button>
+            <button mat-raised-button color="warn" (click)="clearform()">Cancel</button>
+        </div>
+        
+
+    </mat-card-content>
+    <mat-card-footer>
+
+    </mat-card-footer>
+</mat-card>
+</form>

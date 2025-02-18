@@ -1,0 +1,60 @@
+{
+  "customer": [
+    {
+      "id": 1,
+      "name": "sagar",
+      "phone": 101,
+      "email": "sagar123@gmail.com",
+      "status": "active"
+    },
+    {
+      "id": 2,
+      "name": "kamina",
+      "phone": 102,
+      "email": "kamina@gmail.com",
+      "status": "active"
+    },
+    {
+      "name": "nani",
+      "email": "nani@gmail.com",
+      "phone": "232",
+      "status": true,
+      "id": 3
+    },
+    {
+      "name": "sagar",
+      "email": "sagar123@gmail.com",
+      "phone": 101,
+      "status": false,
+      "id": 4
+    },
+    {
+      "name": "sagar",
+      "email": "sagar123@gmail.com",
+      "phone": 101,
+      "status": false,
+      "id": 5
+    },
+    {
+      "name": "sagar",
+      "email": "sagar123@gmail.com",
+      "phone": 101,
+      "status": false,
+      "id": 6
+    },
+    {
+      "name": "sagar",
+      "email": "sagar123@gmail.com",
+      "phone": 101,
+      "status": false,
+      "id": 7
+    },
+    {
+      "name": "",
+      "email": "",
+      "phone": "",
+      "status": false,
+      "id": 8
+    }
+  ]
+}
